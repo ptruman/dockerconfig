@@ -14,6 +14,6 @@ done
 # For each identified Docker container, output it's config
 docker ps --format '{{.Names}}' | while read line
 do
-        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock red5d/docker-autocompose $line > Docker_Container_AutoCompose_$line.yml
+        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/red5d/docker-autocompose $line > Docker_Container_AutoCompose_$line.yml
         docker container inspect $line > Docker_Container_InspectOutput_$line.txt
 done
